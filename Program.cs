@@ -36,7 +36,7 @@ namespace csharp_typesystem_snacks
             WriteLine();
             
             WriteLine("Snack 5");
-            WriteLine("Inserisci un numero");
+            WriteLine("Inserisci un numero intero");
             int Snack5Number = InputGetter.GetIntInput();
             IntManipulator.PrintEvenOrOdd(Snack5Number);
             WriteLine();
@@ -75,7 +75,7 @@ namespace csharp_typesystem_snacks
             
             WriteLine("Snack 9");                       
             int[] snack9Array = new int[12];
-            ArrayPrinter.PrintArray(snack9Array);
+            // ArrayPrinter.PrintArray(snack9Array);
             IntArrayManipulator.ModifyIntArrayUntilSumOfAllElementsIsLessThan50(snack9Array);
             ArrayPrinter.PrintArray(snack9Array);
             WriteLine();
@@ -90,8 +90,7 @@ namespace csharp_typesystem_snacks
                 WriteLine();            
             }
         }                
-             
-    
+                
         internal class InputGetter{
             public static int GetIntInput(){
                 while (true)
@@ -179,9 +178,9 @@ namespace csharp_typesystem_snacks
                 return sum;
             }
 
-            public static int GetAverageOfElementsArray(int[] array){
+            public static float GetAverageOfElementsArray(int[] array){
                 int elementsSum = GetSumOfElementsArray(array);
-                int average = elementsSum / array.Length;
+                float average = (float)elementsSum / (float)array.Length;
                 return average;
             }
             public static int[] GetArrayOfSpecifiedLengthFromUserOnlyOddNumbers(int length){
@@ -234,21 +233,12 @@ namespace csharp_typesystem_snacks
                 for(int i = 0; i < array.Length; i++){
                     array[i] = random.Next(0, 100);
                 }
-                return array;
-            
+                return array;            
             }
-
-
-
-
-
         }
         internal class StringArrayManipulator{
 
-
-        }
-
-        
+        }        
         internal class ArrayPrinter{
             public static void PrintArray(Array array)
             {
@@ -260,11 +250,10 @@ namespace csharp_typesystem_snacks
                 else if (array is string[])
                 {
                     WriteLine(string.Join(", ", (string[])array));
-                }
-                // Add more types as needed
+                }                
                 else
                 {
-                    WriteLine("Unsupported array type");
+                    WriteLine("Tipo di array non supportato");
                 }
             }
         }
