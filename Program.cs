@@ -65,27 +65,27 @@ namespace csharp_typesystem_snacks
             int[] Snack8Array = {1,3,5,6};            
             WriteLine($"La somma degli elementi in posizione dispari è {IntArrayManipulator.GetSumOfElementsArrayInOddPosition(Snack8Array)}");
             WriteLine();
-            */
+            
             WriteLine("Snack 9");                       
             
             int[] snack9Array = new int[12];
             ArrayPrinter.PrintArray(snack9Array);
             IntArrayManipulator.ModifyIntArrayUntilSumOfAllElementsIsLessThan50(snack9Array);
             ArrayPrinter.PrintArray(snack9Array);
-
+            */
+            WriteLine("Snack 10");
             
-
-
-
-
-
-
-
-
+            WriteLine("Digita la quantità di array che vuoi generare");
+            int numberOfArrays = InputGetter.GetIntInput();
+            for (int i = 0; i < numberOfArrays; i++)
+            {
+                int[] array = IntArrayManipulator.GenerateAnArrayOfRandomNumbers(10);
+                ArrayPrinter.PrintArray(array);
+                WriteLine();
             
+            }
+        }                
              
-
-        }
     
         internal class InputGetter{
             public static int GetIntInput(){
@@ -212,15 +212,23 @@ namespace csharp_typesystem_snacks
                 
                 for(int i = 0; i < array.Length; i++){
                     if(sum > 50){
-                        WriteLine("La somma degli elementi í maggiore di 50, non posso procedere");
+                        WriteLine("La somma degli elementi è maggiore di 50, non posso procedere");
                         return array;
                     }
                     WriteLine("Inserisci un numero");
                     int userInput = InputGetter.GetIntInput();
                     array[i] = userInput;
                     sum += userInput;
-                }                    
-                
+                }                                  
+                return array;            
+            }
+
+            public static int[] GenerateAnArrayOfRandomNumbers(int length){
+                int[] array = new int[length];
+                Random random = new Random();
+                for(int i = 0; i < array.Length; i++){
+                    array[i] = random.Next(0, 100);
+                }
                 return array;
             
             }
@@ -234,6 +242,8 @@ namespace csharp_typesystem_snacks
 
 
         }
+
+        
         internal class ArrayPrinter{
             public static void PrintArray(Array array)
             {
