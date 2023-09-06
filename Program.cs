@@ -196,8 +196,7 @@ namespace csharp_typesystem_snacks
                         WriteLine("Inserisci un numero dispari");
                     
                     }
-
-                }                               
+               }                               
                 return array;                          
             }  
             // snacck 8  
