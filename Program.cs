@@ -42,9 +42,14 @@ namespace csharp_typesystem_snacks
                 string? word = ReadLine();
                 if (!string.IsNullOrEmpty(word))
                 {
+                    if(int.TryParse(word, out int result))
+                    {
+                        WriteLine("Input non valido, inserisci una parola");
+                        continue;
+                    }
                     return word;
                 }
-                WriteLine("Invalid input. Please enter a string.");           
+                WriteLine("Input non valido, inserisci una parola");           
                                   
             }
         }
