@@ -8,13 +8,15 @@ namespace csharp_typesystem_snacks
             WriteLine("Esercizio pomeridiano: Snacks");
             WriteLine();
         
-            WriteLine("Snack 1");            
+            WriteLine("Snack 1");
+            WriteLine("Inserisci due numeri interi");            
             int a = InputGetter.GetIntInput();
             int b = InputGetter.GetIntInput();
             IntManipulator.PrintBiggerInt(a,b);
             WriteLine();
 
             WriteLine("Snack 2");  
+            WriteLine("Inserisci due parole");          
             string word1 = InputGetter.GetStringInput();
             string word2 = InputGetter.GetStringInput();
             StringManipulator.PrintLogestWordOrDraw(word1,word2);
@@ -27,11 +29,14 @@ namespace csharp_typesystem_snacks
             
             WriteLine("Snack 4");
             int[] snack4Array = {2,3,4,5,6,7,8,9,10};
+            WriteLine("L'array iniziale è stato creato con i seguenti elementi:");
+            ArrayPrinter.PrintArray(snack4Array);
             WriteLine($"La somma degli elementi dell'array è di {IntArrayManipulator.GetSumOfElementsArray(snack4Array)}.");
             WriteLine($"La media degli elementi dell'array è di {IntArrayManipulator.GetAverageOfElementsArray(snack4Array)}.");
             WriteLine();
             
             WriteLine("Snack 5");
+            WriteLine("Inserisci un numero");
             int Snack5Number = InputGetter.GetIntInput();
             IntManipulator.PrintEvenOrOdd(Snack5Number);
             WriteLine();
@@ -51,7 +56,7 @@ namespace csharp_typesystem_snacks
                 "Chester McKee",
                 "Owl Eyes"
             };
-            WriteLine("Inserisci il tuo nome");
+            WriteLine("Inserisci il tuo nome e vediamo se puoi entrare");
             string userName = InputGetter.GetStringInput();
             WriteLine(guestNames.Contains(userName) ? $"{userName} sei nella lista degli invitati alla festa" : $"{userName}, non sei nella lista dei invitati");
             WriteLine();
@@ -62,19 +67,20 @@ namespace csharp_typesystem_snacks
             WriteLine();
             
             WriteLine("Snack 8");
-            int[] Snack8Array = {1,3,5,6};            
-            WriteLine($"La somma degli elementi in posizione dispari è {IntArrayManipulator.GetSumOfElementsArrayInOddPosition(Snack8Array)}");
+            int[] snack8Array = {1,3,5,6};  
+            WriteLine("L'array iniziale è stato creato con i seguenti elementi:");
+            ArrayPrinter.PrintArray(snack8Array);          
+            WriteLine($"La somma degli elementi in posizione dispari è {IntArrayManipulator.GetSumOfElementsArrayInOddPosition(snack8Array)}");
             WriteLine();
             
             WriteLine("Snack 9");                       
-            
             int[] snack9Array = new int[12];
             ArrayPrinter.PrintArray(snack9Array);
             IntArrayManipulator.ModifyIntArrayUntilSumOfAllElementsIsLessThan50(snack9Array);
             ArrayPrinter.PrintArray(snack9Array);
+            WriteLine();
             
-            WriteLine("Snack 10");
-            
+            WriteLine("Snack 10");            
             WriteLine("Digita la quantità di array che vuoi generare");
             int numberOfArrays = InputGetter.GetIntInput();
             for (int i = 0; i < numberOfArrays; i++)
