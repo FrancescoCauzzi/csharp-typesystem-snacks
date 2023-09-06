@@ -7,7 +7,7 @@ namespace csharp_typesystem_snacks
         {
             WriteLine("Esercizio pomeridiano: Snacks");
             WriteLine();
-        /*
+        
             WriteLine("Snack 1");            
             int a = InputGetter.GetIntInput();
             int b = InputGetter.GetIntInput();
@@ -21,14 +21,14 @@ namespace csharp_typesystem_snacks
             WriteLine();  
         
             WriteLine("Snack 3");     
-            int[] myArray = IntArrayManipulator.GetArrayOfLengthTenFromUser();  
-            WriteLine($"La somma degli elementi dell'array di {myArray.Length} è di {IntArrayManipulator.GetSumOfElementsArray(myArray)} elementi");
+            int[] snack3Array = IntArrayManipulator.GetArrayOfSpecifiedLengthFromUser(10);  
+            WriteLine($"La somma degli elementi dell'array di {snack3Array.Length} è di {IntArrayManipulator.GetSumOfElementsArray(snack3Array)} elementi");
             WriteLine();  
             
             WriteLine("Snack 4");
-            int[] myArray = {2,3,4,5,6,7,8,9,10};
-            WriteLine($"La somma degli elementi dell'array è di {IntArrayManipulator.GetSumOfElementsArray(myArray)}.");
-            WriteLine($"La media degli elementi dell'array è di {IntArrayManipulator.GetAverageOfElementsArray(myArray)}.");
+            int[] snack4Array = {2,3,4,5,6,7,8,9,10};
+            WriteLine($"La somma degli elementi dell'array è di {IntArrayManipulator.GetSumOfElementsArray(snack4Array)}.");
+            WriteLine($"La media degli elementi dell'array è di {IntArrayManipulator.GetAverageOfElementsArray(snack4Array)}.");
             WriteLine();
             
             WriteLine("Snack 5");
@@ -72,7 +72,7 @@ namespace csharp_typesystem_snacks
             ArrayPrinter.PrintArray(snack9Array);
             IntArrayManipulator.ModifyIntArrayUntilSumOfAllElementsIsLessThan50(snack9Array);
             ArrayPrinter.PrintArray(snack9Array);
-            */
+            
             WriteLine("Snack 10");
             
             WriteLine("Digita la quantità di array che vuoi generare");
@@ -81,8 +81,7 @@ namespace csharp_typesystem_snacks
             {
                 int[] array = IntArrayManipulator.GenerateAnArrayOfRandomNumbers(10);
                 ArrayPrinter.PrintArray(array);
-                WriteLine();
-            
+                WriteLine();            
             }
         }                
              
